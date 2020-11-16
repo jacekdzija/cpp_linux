@@ -131,7 +131,7 @@ int main(int argc, char *argv[])
                     input_line = exitCmd;
                 }
             }
-            input_line = RemoveChar(input_line,'\r');
+            input_line = RemoveChar(input_line, '\r');
             input_line.append("\n");
             write(PARENT_WRITE, input_line.c_str(), input_line.length());
 
@@ -167,7 +167,15 @@ int main(int argc, char *argv[])
         logFile << "Got an exceptoion " << e.what() << '\n';
     }
 
-    logFile.close();
+    if (cmdFile.is_open())
+    {
+        cmdFile.close();
+    }
+    if (logFile.is_open())
+    {
+        logFile.close();
+    }
+    
     cout << "Exiting...\n";
     return 0;
 }
