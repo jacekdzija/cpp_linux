@@ -17,3 +17,6 @@ cp Program1 ../out
 
 cd ../out
 cp ../cmd.txt .
+
+adduser testusr --disabled-password --no-create-home -gecos ""
+passwd -d testusr

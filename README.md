@@ -5,13 +5,15 @@ $ sudo git clone https://github.com/jacekdzija/cpp_linux.git
 $ cd cpp_linux
 $ sudo chmod +x install.sh
 $ sudo ./install.sh
+$ chown testusr -R out
 $ cd out
 ```
 #$ How to run
 ```
 $ sudo ./Program1 cmd.txt
-or 
-$ sudo ./Program1
+or as a testusr user
+$ su -c './Program1 cmd.txt' - testusr
+$ su -c ./Program1 - testusr
 ```
 ## supported cmd
 * cmd format = <CMD_NAME><SPACE><Number1><SPACE><NumberN>
